@@ -11,6 +11,13 @@ upstream:
     type: alpine_apk
     repo_url: http://dl-cdn.alpinelinux.org/alpine/v3.24/main/
     package: syslog-ng
+  notes:
+    type: github_release
+    repo: syslog-ng/syslog-ng
+    tag: syslog-ng-${VERSION}
+    transform:
+    - regex: -r\d+$
+      replace: ''
 
 release:
   branch: main
